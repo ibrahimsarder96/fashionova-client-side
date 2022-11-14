@@ -8,11 +8,9 @@ module.exports = {
     themes: [
       {
         fashionovatheme: {
-          primary: "red",
-          secondary: "#f6d860",
-          accent: "#37cdbe",
-          neutral: "#3d4451",
-          "base-100": "#ffffff",
+          primary: "#EB5525",
+          secondary: "#FF8DC7",
+          accent: "#FF8DC7",
         },
       },
       "dark",
