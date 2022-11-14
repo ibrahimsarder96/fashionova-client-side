@@ -13,8 +13,7 @@ module.exports = {
           accent: "#FF8DC7",
         },
       },
-      "dark",
-      "cupcake",
+      
     ],
   },
   plugins: [require("daisyui")],
