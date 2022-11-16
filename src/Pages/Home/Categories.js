@@ -1,10 +1,10 @@
 import React from 'react';
 import cg1 from '../../assest/categories/cg-1.jpg';
-import cg2 from '../../assest/categories/cg-2.webp';
-import cg3 from '../../assest/categories/cg-3.png';
-import cg4 from '../../assest/categories/cg-4.png';
-import cg5 from '../../assest/categories/cg-1.jpg';
-import cg6 from '../../assest/categories/cg-1.jpg';
+import cg2 from '../../assest/categories/cg-2.jpg';
+import cg3 from '../../assest/categories/cg-3.jpg';
+import cg4 from '../../assest/categories/cg-4.jpg';
+import cg5 from '../../assest/categories/cg-5.jpg';
+import cg6 from '../../assest/categories/cg-6.jpg';
 import Category from './Category';
 
 const Categories = () => {
@@ -15,23 +15,23 @@ const Categories = () => {
     'img': cg1
   },
   { 'id': 2,
-    'name': 'a',
+    'name': 'Shoes',
     'img': cg2
   },
   { 'id': 3,
-    'name': 'v',
+    'name': 'Computer & Laptop',
     'img': cg3
   },
   { 'id': 4,
-    'name': 'b',
+    'name': 'Sports',
     'img': cg4
   },
   { 'id': 5,
-    'name': 'c',
+    'name': 'Toys',
     'img': cg5
   },
   { 'id': 6,
-    'name': 'd',
+    'name': 'Health & Beauty',
     'img': cg6
   }
  ]

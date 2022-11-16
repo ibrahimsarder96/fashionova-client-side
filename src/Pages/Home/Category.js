@@ -11,7 +11,7 @@ const Category = ({category}) => {
         
         </div>
       </div>
-      <h1 className='text-2xl text-lime-400'>{name}</h1>
+      <h1 className='text-2xl'>{name}</h1>
     </div>
   );
 };
