@@ -1,0 +1,11 @@
+.buy-btn{
+  padding: 15px 25px;
+  background-color:yellowgreen;
+  border-radius: 10px;
+  font-size: medium;
+  font-weight: bold;
+}
+.buy-btn:hover{
+  background-color: orange;
+  color: azure;
+}
