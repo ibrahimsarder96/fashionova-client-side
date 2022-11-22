@@ -1,11 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 
 const ProductDetail = () => {
   const [products, setProducts] = useProducts();
+  const {productId} = useParams();
   return (
     <div>
-      <h1>Single Product Information{products.length}</h1>
+      <h1 className='text-lime-500'>Single Product Information{productId}</h1>
     </div>
   );
 };
