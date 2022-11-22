@@ -34,7 +34,7 @@ const Login = () => {
         {...register("email",{
           required: {
             value: true,
-            message: 'Email is "Required'
+            message: 'Email is Required'
           },
           pattern: {
             value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
@@ -42,18 +42,42 @@ const Login = () => {
           }
         })}
         />
-       
         <label className="label">
         {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
       {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
         </label>
       </div>
-   
+        <div className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text">Password</span>
+        </label>
+        <input 
+        type="password" 
+        placeholder="write your password" 
+        className="input input-bordered bg-white shadow-2xl w-full max-w-xs"
+        {...register("password",{
+          required: {
+            value: true,
+            message: 'Password is Required'
+          },
+          minLength: {
+            value: 6,
+            message: 'Must be 6 character or longer' 
+          }
+        })}
+        />
+       
+        <label className="label">
+        {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+      {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+        </label>
+      </div>
+        <input className='btn bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Login'/>
     </form>
   <div className="divider">OR</div>
   <button 
    onClick={() => signInWithGoogle()}
-  className="btn btn-outline bg-black text-white"
+  className="btn btn-outline bg-lime-500 text-white font-extrabold"
   >Continue With Google</button>
   </div>
   </div>
