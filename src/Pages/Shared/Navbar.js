@@ -8,6 +8,7 @@ const Navbar = () => {
     <li className='text-xl '><CustomLink to="/about">About</CustomLink></li>
     <li className='text-xl '><CustomLink to="/contact">Contact</CustomLink></li>
     <li className='text-xl '><CustomLink to="/login">Login</CustomLink></li>
+   
      
   </>
   return (

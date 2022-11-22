@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -15,7 +16,7 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
-  if(gUser){
+  if(user|| gUser){
     console.log(user)
   }
   if(loading || gLoading){
@@ -85,12 +86,13 @@ const Login = () => {
        
         <label className="label">
         {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-      {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+      {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
         </label>
       </div>
       {signInError}
         <input className='btn bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Login'/>
     </form>
+    <p className='text-accent'>New Fashionova? <Link to="/signup" className='text-orange-400'>Create New Account</Link></p>
   <div className="divider">OR</div>
   <button 
    onClick={() => signInWithGoogle()}
