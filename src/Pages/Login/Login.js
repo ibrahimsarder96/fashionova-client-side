@@ -3,7 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -15,6 +15,7 @@ const Login = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
 
   if(user|| gUser){
     console.log(user)
@@ -30,7 +31,8 @@ const Login = () => {
 
   const onSubmit = data =>{
     console.log(data)
-    signInWithEmailAndPassword(data.email, data.password)
+    signInWithEmailAndPassword(data.email, data.password);
+    navigate('/home');
   };
 
 
@@ -90,10 +92,10 @@ const Login = () => {
         </label>
       </div>
       {signInError}
-        <input className='btn bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Login'/>
+        <input className='btn hover:bg-slate-600 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Login'/>
     </form>
     <p className='text-accent'>New Fashionova? <Link to="/signup" className='text-orange-400'>Create New Account</Link></p>
-  <div className="divider">OR</div>
+    <div className="divider">OR</div>
   <button 
    onClick={() => signInWithGoogle()}
   className="btn btn-outline bg-lime-500 text-white font-extrabold"
