@@ -116,7 +116,11 @@ const SignUp = () => {
           <input className='btn hover:bg-slate-600 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Sign UP'/>
       </form>
       <p className='text-accent'>New Fashionova? <Link to="/login" className='text-orange-400'>Please Login</Link></p>
-    <div className="divider">OR</div>
+      <div className="flex items-center justify-center ">
+        <div className="h-1 bg-gray-300 w-28 rounded-md"></div>
+        <div className="divider">OR</div>
+        <div className="h-1 bg-gray-300 w-28 rounded-md"></div>
+      </div>
     <button 
      onClick={() => signInWithGoogle()}
     className="btn btn-outline bg-lime-500 text-white font-extrabold">
