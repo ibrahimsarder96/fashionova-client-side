@@ -4,6 +4,7 @@ import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
+import google from '../../assest/social/google.png';
 
 
 const Login = () => {
@@ -98,8 +99,10 @@ const Login = () => {
     <div className="divider">OR</div>
   <button 
    onClick={() => signInWithGoogle()}
-  className="btn btn-outline bg-lime-500 text-white font-extrabold"
-  >Continue With Google</button>
+  className="btn btn-outline bg-lime-500 text-white font-extrabold">
+    <img style={{width: '30px'}} src={google} alt="" />
+        <span className='px-2'>Continue With Google</span>
+    </button>
   </div>
   </div>
 </div>
