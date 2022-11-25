@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import google from '../../assest/social/google.png'
+import { async } from '@firebase/util';
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,6 +17,8 @@ const SignUp = () => {
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updError] = useUpdateProfile(auth);
+  const [agree, setAgree] = useState(false);
+  
   const navigate = useNavigate();
 
   if(user || gUser){
@@ -34,9 +37,14 @@ const SignUp = () => {
     console.log(data)
     createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name});
-    console.log('update done')
-    navigate('/home')
+    if(agree){
+      console.log('update done')
+      navigate('/home')
+    }
+   
   };
+
+ 
 
   return (
     <div className="card h-screen justify-center items-center">
@@ -112,10 +120,18 @@ const SignUp = () => {
         {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
           </label>
         </div>
+        <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
+        <label className={`pl-2 ${agree ? ' ' : 'text-red-500'}`} htmlFor="terms">Accept Fashionova terms and Condition</label>
         {signInError}
-          <input className='btn hover:bg-slate-600 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Sign UP'/>
+          <input
+          disabled={!agree} 
+
+          className='disabled:bg-slate-500 btn hover:bg-orange-400 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold mt-2' 
+          type='submit' 
+          value='Sign UP'/>
       </form>
-      <p className='text-accent'>New Fashionova? <Link to="/login" className='text-orange-400'>Please Login</Link></p>
+      <p className='text-accent'>New Fashionova? <Link to="/login" className='text-blue-400'>Please Login</Link></p>
+     
       <div className="flex items-center justify-center ">
         <div className="h-1 bg-gray-300 w-28 rounded-md"></div>
         <div className="divider">OR</div>

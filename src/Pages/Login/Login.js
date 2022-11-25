@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
@@ -16,12 +16,13 @@ const Login = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
 
   if(user|| gUser){
     console.log(user)
   }
-  if(loading || gLoading){
+  if(loading || gLoading || sending){
     return <Loading></Loading>
   }
   let signInError;
@@ -36,6 +37,12 @@ const Login = () => {
     navigate('/home');
   };
 
+  // password reset not completed
+  const resetPassword = async(event) =>{
+    const email = event.target.value;
+    console.log(email)
+     await sendPasswordResetEmail(email);
+   }
 
   return (
 <div className="card h-screen justify-center items-center">
@@ -96,6 +103,7 @@ const Login = () => {
         <input className='btn hover:bg-slate-600 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Login'/>
     </form>
     <p className='text-accent'>New Fashionova? <Link to="/signup" className='text-orange-400'>Create New Account</Link></p>
+    <p className='text-accent'>Forget Password?<Link onClick={resetPassword} className='text-blue-400'> Reset Password</Link></p>
     <div className="flex items-center justify-center ">
         <div className="h-1 bg-gray-300 w-28 rounded-md"></div>
         <div className="divider">OR</div>
