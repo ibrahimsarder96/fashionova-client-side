@@ -1,10 +1,20 @@
 import React from 'react';
-import {  SpinnerCircularSplit } from 'spinners-react';
+
+import { BallTriangle } from  'react-loader-spinner'
 
 const Loading = () => {
   return (
-    <div className='flex  h-screen justify-center items-center'>
-      <SpinnerCircularSplit  size={90} thickness={100} speed={100} color="rgba(54, 215, 183, 1)" secondaryColor="rgba(94, 172, 57, 0.44)"  />
+    <div className='flex justify-center items-center h-screen'>
+ <BallTriangle
+  height={100}
+  width={100}
+  radius={5}
+  color="#4fa94d"
+  ariaLabel="ball-triangle-loading"
+  wrapperClass={{}}
+  wrapperStyle=""
+  visible={true}
+/>
     </div>
   );
 };

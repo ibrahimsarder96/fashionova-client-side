@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import google from '../../assest/social/google.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -16,13 +18,13 @@ const Login = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
 
   if(user|| gUser){
-    console.log(user)
+    navigate('/home')
   }
-  if(loading || gLoading || sending){
+  if(loading || gLoading){
     return <Loading></Loading>
   }
   let signInError;
@@ -30,20 +32,22 @@ const Login = () => {
     signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
 
   }
-
   const onSubmit = data =>{
     console.log(data)
     signInWithEmailAndPassword(data.email, data.password);
     navigate('/home');
   };
 
-  // password reset not completed
-  const resetPassword = async(event) =>{
-    const email = event.target.value;
+  //***The function has not finished the work*******
+  const resetPassword = async(data)=> {
+    const email = data.email;
     console.log(email)
-     await sendPasswordResetEmail(email);
-   }
-
+    if(email){
+      await sendPasswordResetEmail(email);
+    toast('sent email');
+    }
+  }
+  
   return (
 <div className="card h-screen justify-center items-center">
   <div className='card w-100 bg-slate-200 shadow-2xl'>
@@ -55,7 +59,7 @@ const Login = () => {
           <span className="label-text">Email</span>
         </label>
         <input 
-        type="email" 
+        type="email"
         placeholder="write your email" 
         className="input input-bordered bg-white shadow-2xl w-full max-w-xs"
         {...register("email",{
@@ -102,8 +106,8 @@ const Login = () => {
       {signInError}
         <input className='btn hover:bg-slate-600 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Login'/>
     </form>
-    <p className='text-accent'>New Fashionova? <Link to="/signup" className='text-orange-400'>Create New Account</Link></p>
-    <p className='text-accent'>Forget Password?<Link onClick={resetPassword} className='text-blue-400'> Reset Password</Link></p>
+    <p className='text-accent'>New Fashionova? <Link to="/signup" className='text-blue-400'>Create New Account</Link></p>
+    <p className='text-accent'>Forget Password? <button onClick={resetPassword} className='text-blue-400'>Reset Password</button></p>
     <div className="flex items-center justify-center ">
         <div className="h-1 bg-gray-300 w-28 rounded-md"></div>
         <div className="divider">OR</div>
@@ -115,6 +119,7 @@ const Login = () => {
     <img style={{width: '30px'}} src={google} alt="" />
         <span className='px-2'>Continue With Google</span>
     </button>
+    <ToastContainer />
   </div>
   </div>
 </div>

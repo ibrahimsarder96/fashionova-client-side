@@ -15,14 +15,14 @@ const SignUp = () => {
     user,
     loading,
     error,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
   const [updateProfile, updating, updError] = useUpdateProfile(auth);
   const [agree, setAgree] = useState(false);
   
   const navigate = useNavigate();
 
   if(user || gUser){
-    console.log(user)
+   navigate('/home')
   }
   if(loading || gLoading || updating){
     return <Loading></Loading>
@@ -37,11 +37,7 @@ const SignUp = () => {
     console.log(data)
     createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name});
-    if(agree){
-      console.log('update done')
       navigate('/home')
-    }
-   
   };
 
  
@@ -126,7 +122,7 @@ const SignUp = () => {
           <input
           disabled={!agree} 
 
-          className='disabled:bg-slate-500 btn hover:bg-orange-400 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold mt-2' 
+          className='btn disabled:bg-slate-500 disabled:text-white hover:bg-orange-400 bg-orange-400 w-full max-w-xs uppercase orange-400 font-extrabold mt-2' 
           type='submit' 
           value='Sign UP'/>
       </form>
