@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init'
+import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
-import google from '../../assest/social/google.png'
-import { async } from '@firebase/util';
+import google from '../../assest/social/google.png';
 
 const SignUp = () => {
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth, {sendEmailVerification: true} );
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [
     createUserWithEmailAndPassword,
