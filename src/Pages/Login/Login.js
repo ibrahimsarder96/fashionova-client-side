@@ -3,7 +3,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWith
 import auth from '../../firebase.init'
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assest/social/google.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,10 +19,13 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
   
+ 
+  const location = useLocation();
   const navigate = useNavigate();
+  let from = location.state?.from?.pathname || "/";
 
-  if(gUser){
-    navigate('/home');
+  if(user || gUser){
+    navigate(from, { replace: true });
   }
   if(loading || gLoading){
     return <Loading></Loading>
@@ -34,7 +37,6 @@ const Login = () => {
   const onSubmit = data =>{
     console.log(data)
     signInWithEmailAndPassword(data.email, data.password);
-    navigate('/home');
   };
 
   //***The function has not finished the work*******
@@ -60,7 +62,7 @@ const Login = () => {
         </label>
         <input 
         type="email"
-        placeholder="write your email" 
+        placeholder="write your email"
         className="input input-bordered bg-white shadow-2xl w-full max-w-xs"
         {...register("email",{
           required: {
@@ -107,7 +109,7 @@ const Login = () => {
         <input className='btn hover:bg-slate-600 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Login'/>
     </form>
     <p className='text-accent'>New Fashionova? <Link to="/signup" className='text-blue-400'>Create New Account</Link></p>
-    <p className='text-accent'>Forget Password? <button className='text-blue-400'>Reset Password</button></p>
+    <p className='text-accent'>Forget Password? <button className='text-blue-400' >Reset Password</button></p>
     <div className="flex items-center justify-center ">
         <div className="h-1 bg-gray-300 w-28 rounded-md"></div>
         <div className="divider">OR</div>
