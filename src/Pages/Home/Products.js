@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import useProducts from '../../hooks/useProducts';
 import Product from './Product';
 
@@ -10,7 +9,7 @@ const Products = () => {
       <div className='mt-11 lg:mx-52 sm:m-0 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-3'>
       {
         products.map(product => <Product
-        key={product.id}
+        key={product._id}
         product={product}
         ></Product>)
       }
