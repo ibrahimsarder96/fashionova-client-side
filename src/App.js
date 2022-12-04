@@ -1,9 +1,14 @@
 import { Route, Routes } from "react-router-dom";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import MyOrder from "./Pages/Dashboard/MyOrder";
+import MyReview from "./Pages/Dashboard/MyReview";
+
 import Home from "./Pages/Home/Home";
 import ProductDetail from "./Pages/Home/ProductDetail";
 import Login from "./Pages/Login/Login";
 import RequireAuth from "./Pages/Login/RequireAuth";
 import SignUp from "./Pages/Login/SignUp";
+import Order from "./Pages/Order/Order";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
@@ -22,6 +27,19 @@ function App() {
           <ProductDetail></ProductDetail>
         </RequireAuth>
         }></Route>
+        <Route path="/order" element={
+        <RequireAuth>
+         <Order></Order>
+        </RequireAuth>
+        }></Route>
+        <Route path="/dashboard" element={
+        <RequireAuth>
+          <Dashboard></Dashboard>
+        </RequireAuth>
+        }>
+          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route path="review" element={<MyReview></MyReview>}></Route>
+        </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

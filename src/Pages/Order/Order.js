@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Dashabord = () => {
+const Order = () => {
   return (
     <div>
-      
+      <h1>order page</h1>
     </div>
   );
 };
 
-export default Dashabord;
+export default Order;
