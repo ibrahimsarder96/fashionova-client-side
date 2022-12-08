@@ -12,7 +12,7 @@ const GiftCard = () => {
   return (
     <div>
      <h1 className='my-11 font-bold text-2xl ml-52'>GiftCard</h1>
-      <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 mx-52'>
+      <div className='cursor-pointer grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 mx-52'>
      <div>
      <div className='bg-slate-200 pb-6'>
     <div className="hero h-42">

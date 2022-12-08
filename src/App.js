@@ -2,8 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyOrder from "./Pages/Dashboard/MyOrder";
 import MyReview from "./Pages/Dashboard/MyReview";
-
 import Home from "./Pages/Home/Home";
+
 import ProductDetail from "./Pages/Home/ProductDetail";
 import Login from "./Pages/Login/Login";
 import RequireAuth from "./Pages/Login/RequireAuth";

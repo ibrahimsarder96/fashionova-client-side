@@ -14,6 +14,7 @@ const Navbar = () => {
 
   const menuItem = <>
     <li className='text-xl '><CustomLink to="/">Home</CustomLink></li>
+    
     {
       !user && <li className='text-xl '><CustomLink to="/about">About</CustomLink></li>
     }
