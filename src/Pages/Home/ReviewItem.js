@@ -20,8 +20,8 @@ const ReviewItem = (props) => {
       <p className='text-xl'>Shaping: {shipping}</p>
       </div>
       <div className='mr-5'>
-        <button onClick={() => handleRemoveProduct(product)} className='p-6 rounded-full bg-orange-300'>
-        <FontAwesomeIcon className='text-orange-600 w-7 h-7' icon={faTrashAlt}>     </FontAwesomeIcon>
+        <button onClick={() => handleRemoveProduct(product)} className='p-6 rounded-full bg-orange-400'>
+        <FontAwesomeIcon className='text-orange-700 w-7 h-7' icon={faTrashAlt}>     </FontAwesomeIcon>
         </button>
       </div>
      </div>

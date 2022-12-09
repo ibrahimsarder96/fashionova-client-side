@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useProduct from '../../hooks/useProduct';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from './Cart';
@@ -64,12 +64,16 @@ const ProductDetail = () => {
         <div>
           <Cart
           cart={cart}
-          ></Cart>
+          >
+            <Link to='/order'>
+              <button className='text-white bg-blue-400 rounded-lg p-3 mt-5'>Order Review</button>
+            </Link>
+          </Cart>
         </div>
       </div>
     </div>
     <div>
-      <h1 className='text-2xl font-bold'>Product Description</h1>
+    <h1 className='text-2xl font-bold'>Product Description</h1>
       <p>{product.description}</p>
       </div>
    </div>
