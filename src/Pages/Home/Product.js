@@ -5,7 +5,7 @@ import './Product.css';
 const Product = ({product}) => {
   const { _id, img, name, price} = product;
   const navigate = useNavigate();
-console.log(product)
+
   const navigateToProductDetail = id => {
     navigate(`/product/${id}`)
   }

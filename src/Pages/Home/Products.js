@@ -4,7 +4,6 @@ import Product from './Product';
 const Products = () => {
   const [products, setProducts] = useProducts();
  
-  
   return (
     <div>
       <h1 className='my-11 font-bold text-2xl ml-52'>LifeStyle</h1>

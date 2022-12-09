@@ -13,16 +13,15 @@ const Cart = (props) => {
   let tax = parseFloat((total * 0.1).toFixed(2));
   let grandTotal = total + shipping + tax;
   return (
-    <div className='bg-orange-200 sticky'>
+    <div className='bg-orange-200 sticky h-screen'>
       <h1 className='text-center pt-5 text-xl font-bold text-orange-500'>Order Summary</h1>
       <div className="pl-3 py-4 text-xl">
-      <h1>Selected Items: {cart.length}</h1>
-      <p>Total Price: ${total}</p>
-      <p>Total Shipping: ${shipping}</p>
-      <p>Tax: {tax}</p>
-      <h5>Grand Total: {grandTotal.toFixed(2)}</h5>
+      <h1 className='mt-5'>Selected Items: {quantity}</h1>
+      <p className='mt-5'>Total Price: $ {total}</p>
+      <p className='mt-5'>Total Shipping: $ {shipping}</p>
+      <p className='mt-5'>Tax: {tax}</p>
+      <h5 className='mt-5 font-bold'>Grand Total: {grandTotal.toFixed(2)}</h5>
       </div>
-     
     </div>
   );
 };
