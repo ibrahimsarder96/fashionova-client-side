@@ -6,6 +6,7 @@ import useProduct from '../../hooks/useProduct';
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from './Cart';
 import useProducts from '../../hooks/useProducts';
+import BookingModal from './BookingModal';
 
 const ProductDetail = () => {
 
@@ -13,6 +14,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useProduct(productId);
   const [products] = useProducts();
   const [cart, setCart] = useState([]);
+  const [vendible, setVendible] = useState(null);
 
   useEffect( () => {
     const storedCart = getStoredCart();
@@ -53,7 +55,10 @@ const ProductDetail = () => {
         <img className='w-96 h-96 mt-10' src={product.img} alt="" />
         <div>
         <button onClick={ () => handleAddToCart(product)} className="btn inline-block hover:bg-orange-500 bg-lime-500 text-xl font-bold text-white mt-5 w-96">Add To Cart</button>
-      <button className="btn hover:bg-orange-500 bg-lime-500 text-xl font-bold text-white mt-5 w-96">Order</button>
+        <label 
+        onClick={() => setVendible(product)}
+        htmlFor="booking-modal" 
+        className="btn hover:bg-orange-500 bg-lime-500 text-xl font-bold text-white mt-5 w-96">Buy Now</label>
         </div>
         </div>
         <div className='pt-32 ml-10 mt-10'>
@@ -66,7 +71,7 @@ const ProductDetail = () => {
           cart={cart}
           >
             <Link to='/order'>
-              <button className='text-white bg-blue-400 rounded-lg p-3 mt-5'>Order Review</button>
+              <button className='text-white bg-lime-400 rounded-lg p-3 mt-5'>Order Review</button>
             </Link>
           </Cart>
         </div>
@@ -76,6 +81,9 @@ const ProductDetail = () => {
     <h1 className='text-2xl font-bold'>Product Description</h1>
       <p>{product.description}</p>
       </div>
+      {
+        vendible && <BookingModal setVendible={setVendible} vendible={vendible}></BookingModal>
+      }
    </div>
   );
 };

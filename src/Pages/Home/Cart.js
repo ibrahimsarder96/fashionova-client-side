@@ -14,8 +14,8 @@ const Cart = (props) => {
   let grandTotal = total + shipping + tax;
   return (
     <div className='bg-orange-200 sticky h-screen text-center'>
-      <h1 className=' pt-5 text-xl font-bold text-orange-500'>Order Summary</h1>
-      <div className="pl-3 py-4 text-xl">
+      <h1 className=' pt-5 text-2xl font-bold text-orange-500'>Order Summary</h1>
+      <div className="pl-3 text-xl">
       <h1 className='mt-5'>Selected Items: {quantity}</h1>
       <p className='mt-5'>Total Price: $ {total}</p>
       <p className='mt-5'>Total Shipping: $ {shipping}</p>
