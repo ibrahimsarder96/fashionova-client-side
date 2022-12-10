@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const BookingModal = ({vendible, setVendible}) => {
@@ -20,9 +21,26 @@ console.log(user)
       code: event.target.code.value,
       phone: event.target.phone.value
     }
-    setVendible(null)
+    fetch('http://localhost:5000/order', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(order)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      if(data){
+        toast('order successful');
+      }
+      // else{
+      //   toast.error ('order unsuccessful');
+      // }
+      setVendible(null);
+    })
   }
-console.log(user)
+
   return (
     <div className=''>
     <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -31,7 +49,7 @@ console.log(user)
         <div className="modal-box bg-slate-800">
         <label for="booking-modal" className="btn hover:bg-orange-500 hover:text-white bg-white btn-circle absolute right-2 top-2">✕</label>
           <h3 className="font-bold text-white text-lg">Booking for: <span className='text-purple-400'>{name}</span></h3>
-          <form onClick={handleOrder} className='grid grid-cols-1 gap-3 justify-items-center mt-5'> 
+          <form onSubmit={handleOrder} className='grid grid-cols-1 gap-3 justify-items-center mt-5'> 
           <input type="emil" name="email"  readOnly value={user?.email || ''} className="input input-bordered w-full max-w-xs border-lime-400 bg-white text-black text-lg"/>
           <input type="text" name="name" placeholder='name' className="input input-bordered w-full max-w-xs border-lime-400 bg-white text-black text-lg"/>
           <input type="text" name="country" placeholder='country' className="input input-bordered w-full max-w-xs border-lime-400 bg-white text-black text-lg"/>

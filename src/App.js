@@ -3,7 +3,8 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyOrder from "./Pages/Dashboard/MyOrder";
 import MyReview from "./Pages/Dashboard/MyReview";
 import Home from "./Pages/Home/Home";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ProductDetail from "./Pages/Home/ProductDetail";
 import Login from "./Pages/Login/Login";
 import RequireAuth from "./Pages/Login/RequireAuth";
@@ -42,6 +43,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
       <Footer></Footer>
     </div>
   );
