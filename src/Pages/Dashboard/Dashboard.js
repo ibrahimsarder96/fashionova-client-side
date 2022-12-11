@@ -6,19 +6,19 @@ const Dashboard = () => {
   return (
   <div className="md:px-36">
       <div className="drawer drawer-mobile">
-  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+  <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content mt-6">
     <h1 className='text-purple-500 text-center text-3xl font-bold'>Welcome to Dashboard</h1>
     {/* <!-- Page content here --> */}
     <Outlet></Outlet>
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+    
   
   </div> 
   <div className="drawer-side">
-    <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
+    <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label> 
     <ul className="menu p-6 w-80 bg-gray-100 text-base-content">
       {/* <!-- Sidebar content here --> */}
-      <li className='text-2xl font-bold'><Link to='/dashboard'>My order</Link></li>
+      <li className='text-2xl font-bold'><Link to='/dashboard'>My orders</Link></li>
       <li className='text-2xl font-bold'><Link to='/dashboard/review'>My review</Link></li>
     </ul>
   </div>

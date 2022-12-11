@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import MyOrder from "./Pages/Dashboard/MyOrder";
 import MyReview from "./Pages/Dashboard/MyReview";
 import Home from "./Pages/Home/Home";
 import { ToastContainer } from 'react-toastify';
@@ -13,6 +12,7 @@ import Order from "./Pages/Order/Order";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
+import MyOrders from "./Pages/Dashboard/MyOrders";
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
           <Dashboard></Dashboard>
         </RequireAuth>
         }>
-          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
