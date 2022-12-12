@@ -43,7 +43,7 @@ const Navbar = () => {
     </div>
     <Link to='/' className="font-extrabold normal-case text-lime-400 lg:text-4xl lg:pl-36">Fashionova</Link>
   </div>
-  <div className="navbar-center hidden lg:flex">
+  <div className="navbar-center lg:pl-96 hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
       {menuItem}
     </ul>

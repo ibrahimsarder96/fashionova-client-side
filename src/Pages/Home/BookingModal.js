@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const BookingModal = ({vendible, setVendible}) => {
-  const {_id, name, price} = vendible;
+  const {_id, name, price ,stock} = vendible;
   const [user, loading] = useAuthState(auth);
 
 console.log(user)
@@ -12,10 +12,12 @@ console.log(user)
     event.preventDefault()
     const order = {
       productId: _id,
-      product:name,
+      stock: stock,
+      product: name,
       price,
       customer:user.email,
       customerName:event.target.name.value,
+      quantity:event.target.quantity.value,
       country:event.target.country.value,
       date: event.target.date.value,
       code: event.target.code.value,
@@ -31,8 +33,11 @@ console.log(user)
     .then(res => res.json())
     .then(data => {
       console.log(data)
-      if(data){
-        toast('order successful');
+      if(data.success){
+        toast(`Order Successful`);
+      }
+      else{
+        toast.error (`Stock Not Available`);
       }
       // else{
       //   toast.error ('order unsuccessful');
@@ -51,6 +56,7 @@ console.log(user)
           <h3 className="font-bold text-white text-lg">Booking for: <span className='text-purple-400'>{name}</span></h3>
           <form onSubmit={handleOrder} className='grid grid-cols-1 gap-3 justify-items-center mt-5'> 
           <input type="emil" name="email"  readOnly value={user?.email || ''} className="input input-bordered w-full max-w-xs border-lime-400 bg-white text-black text-lg"/>
+          <input type="text" name="quantity" placeholder='product quantity' className="input input-bordered w-full max-w-xs border-lime-400 bg-white text-black text-lg"/>
           <input type="text" name="name" placeholder='name' className="input input-bordered w-full max-w-xs border-lime-400 bg-white text-black text-lg"/>
           <input type="text" name="country" placeholder='country' className="input input-bordered w-full max-w-xs border-lime-400 bg-white text-black text-lg"/>
           <input type="text" name="date" placeholder="date" className="input input-bordered w-full max-w-xs border-lime-400 bg-white text-black text-lg"/>
