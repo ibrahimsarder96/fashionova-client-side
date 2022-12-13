@@ -18,11 +18,11 @@ const MyOrders = () => {
   },[user])
   return (
     <div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto mt-4">
   <table className="table w-full">
     <thead>
-      <tr>
-        <th></th>
+      <tr className='bg-black text-white'>
+        <th>Serial</th>
         <th>Name</th>
         <th>Date</th>
         <th>Email</th>
@@ -32,8 +32,8 @@ const MyOrders = () => {
     </thead>
     <tbody>
     {
-      orders.map(order =><tr>
-        <th>1</th>
+      orders.map((order, index) =><tr>
+        <th>{index + 1}</th>
         <td>{order.customerName}</td>
         <td>{order.date}</td>
         <td>{order.customer}</td>

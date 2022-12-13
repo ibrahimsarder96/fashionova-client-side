@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assest/social/google.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useToken from '../../hooks/useToken';
 
 
 const Login = () => {
@@ -18,13 +19,13 @@ const Login = () => {
     loading,
     error,
   ] = useSignInWithEmailAndPassword(auth);
-  
+  const [token] = useToken(user || gUser);
  
   const location = useLocation();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
 
-  if(user || gUser){
+  if(token){
     navigate(from, { replace: true });
   }
   if(loading || gLoading){
