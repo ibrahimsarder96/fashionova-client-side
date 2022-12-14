@@ -20,6 +20,7 @@ const Dashboard = () => {
       {/* <!-- Sidebar content here --> */}
       <li className='text-2xl font-bold'><Link to='/dashboard'>My orders</Link></li>
       <li className='text-2xl font-bold'><Link to='/dashboard/review'>My review</Link></li>
+      <li className='text-2xl font-bold'><Link to='/dashboard/users'>All Users</Link></li>
     </ul>
   </div>
 </div>
