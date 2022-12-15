@@ -21,13 +21,13 @@ const Dashboard = () => {
   </div> 
   <div className="drawer-side">
     <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label> 
-    <ul className="menu p-6 w-60 bg-indigo-400 text-base-content">
+    <ul className="menu p-6 w-76 bg-indigo-400 text-base-content">
       {/* <!-- Sidebar content here --> */}
       <li className='text-2xl text-white hover:text-black hover:bg-lime-200 rounded-md font-bold'><Link to='/dashboard'>My orders</Link></li>
       <li className='text-2xl text-white hover:text-black hover:bg-purple-200 rounded-md font-bold'><Link to='/dashboard/review'>My review</Link></li>
       <li className='text-2xl text-white hover:text-black hover:bg-lime-200 rounded-md font-bold'><Link to='/dashboard/users'>All Users</Link></li>
       <li className='text-2xl text-white hover:text-black hover:bg-purple-200 rounded-md font-bold'><Link to='/dashboard/addProduct'>Add Product</Link></li>
-      
+      <li className='text-2xl text-white hover:text-black hover:bg-lime-200 rounded-md font-bold'><Link to='/dashboard/manageProduct'>Manage Product</Link></li>
     </ul>
   </div>
 </div>
