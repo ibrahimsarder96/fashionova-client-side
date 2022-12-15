@@ -15,6 +15,7 @@ import NotFound from "./Pages/Shared/NotFound/NotFound";
 import MyOrders from "./Pages/Dashboard/MyOrders";
 import Users from "./Pages/Dashboard/Users";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
+import AddProduct from "./Pages/Dashboard/AddProduct";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
           <Route path="users" element={<Users></Users>}></Route>
+          <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
           {/* <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route> */}
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
