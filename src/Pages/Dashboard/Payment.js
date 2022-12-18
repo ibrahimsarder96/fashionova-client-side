@@ -25,18 +25,18 @@ const Payment = () => {
     <div>
     <div class="hero min-h-screen">
 <div class="hero-content flex-col lg:flex-row-reverse">
-  <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+  <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-black">
    <div className="card-body shadow-2xl rounded-xl">
    <h1 class="text-2xl font-bold text-green-400">{order.customerName}</h1>
-    <p class="py-3 text-2xl text-accent">{order.product}</p>
-    <p class="py-3 text-2xl text-accent">Your order: <span className='text-purple-300'>{order.date}</span></p>
-    <p class="py-3 text-2xl text-accent">Please pay: ${order.price}</p>
+    <p class=" text-2xl text-white">{order.product}</p>
+    <p class="py-2 text-2xl text-white">Your order: <span className='text-pink-300'>{order.date}</span></p>
+    <p class=" text-2xl text-white">Please pay: <span className='text-orange-500'>${order.price}</span></p>
    </div>
   </div>
   <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
     <div class="card-body shadow-2xl">
     <Elements stripe={stripePromise}>
-    <CheckoutForm />
+    <CheckoutForm order={order}/>
   </Elements>
     </div>
   </div>
