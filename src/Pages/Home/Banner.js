@@ -1,41 +1,22 @@
 import React from 'react';
-import banner1 from '../../assest/banner/banner-1.jpg';
-import banner2 from '../../assest/banner/banner-2.jpg';
-import banner3 from '../../assest/banner/banner-3.jpg';
-import banner4 from '../../assest/banner/banner-4.jpg';
+import banner from '../../assest/banner/banner.jpg';
+// import bg from '../../assest/banner/bg.jpg';
 
 const Banner = () => {
   return (
-    <div className="carousel lg:h-screen w-full">
-    <div id="slide1" className="carousel-item relative w-full">
-      <img src={banner1} alt='' className="w-full" />
-      <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="#slide4" className="btn btn-circle">❮</a> 
-        <a href="#slide2" className="btn btn-circle">❯</a>
-      </div>
-    </div> 
-    <div id="slide2" className="carousel-item relative w-full">
-      <img src={banner2} alt='' className="w-full" />
-      <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="#slide1" className="btn btn-circle">❮</a> 
-        <a href="#slide3" className="btn btn-circle">❯</a>
-      </div>
-    </div> 
-    <div id="slide3" className="carousel-item relative w-full">
-      <img src={banner3} alt='' className="w-full" />
-      <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="#slide2" className="btn btn-circle">❮</a> 
-        <a href="#slide4" className="btn btn-circle">❯</a>
-      </div>
-    </div> 
-    <div id="slide4" className="carousel-item relative w-full">
-      <img src={banner4} alt='' className="w-full" />
-      <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href="#slide3" className="btn btn-circle">❮</a> 
-        <a href="#slide1" className="btn btn-circle">❯</a>
-      </div>
+    <div style={{
+      // background: `url(${bg})`,
+      backgroundSize: 'cover'
+    }} className="hero min-h-screen">
+  <div className="hero-content flex-col lg:flex-row-reverse xl:max-w-screen-2xl">
+    <img src={banner} alt='' className="max-w-sm h-full rounded-lg shadow-2xl" />
+    <div>
+      <h1 className="text-5xl font-bold text-black">The Classics</h1>
+      <p className="py-6 text-black">A resolution to get behind Effortlessly refined Styles for Celebrating A Stand out Shirt is a on-and done autumn look</p>
+      <button className='btn bg-orange-400'>BUY IT NOW!</button>
     </div>
   </div>
+</div>
   );
 };
 

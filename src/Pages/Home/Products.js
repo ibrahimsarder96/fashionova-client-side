@@ -6,7 +6,7 @@ const Products = () => {
  
   return (
     <div>
-      <div className='flex flex-col w-full'>
+      <div id='buy' className='flex flex-col w-full'>
       <h1 className='mt-12 font-bold text-2xl text-center'>Our Top Collection</h1>
       <div className='flex items-center justify-center'>
       <div className="divider bg-orange-400 w-72 h-1 rounded-md"></div>

@@ -4,11 +4,11 @@ import payment from '../../../assest/payment/payment.jpg';
 
 const Footer = () => {
 
-  const startYear = 2022
+  const startYear = 2022;
   const currentYear = new Date().getFullYear()
   return (
     <div>
-      <footer className="footer p-24 bg-gray-800 mt-32 pl-52">
+      <footer className="footer p-24 bg-gray-800 mt-32">
     <div>
     <span className="text-xl font-bold text-white">Customer Care</span> 
       <Link to='/' className='text-white'>Become an Affiliate</Link>
@@ -28,7 +28,7 @@ const Footer = () => {
       <Link to='/' className='text-white'>Return & Refund</Link>
   </div>
 </footer> 
-<footer className="footer py-4 border-t bg-black text-base-content border-base-300 px-52">
+<footer className="footer py-4 border-t bg-black text-base-content border-base-300 px-24">
   <div className="items-center ">
   <h1 className='text-xl text-white font-bold'>Payment Methods</h1>
     <img className='h-24' src={payment} alt="" />
@@ -42,7 +42,7 @@ const Footer = () => {
     </div>
   </div>
 </footer>
-  <p className='text-white pl-16 bg-black text-center pb-6'>Copyright © {currentYear} - All right reserved</p>
+  <p className='text-white bg-black text-center pb-6'>Copyright © {currentYear} - All right reserved</p>
     </div>
   );
 };
