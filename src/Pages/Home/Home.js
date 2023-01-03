@@ -5,6 +5,7 @@ import Discount from './Discount';
 import GiftCard from './GiftCard';
 import Info from './Info';
 import Products from './Products';
+import ProductSlider from './ProductSlider';
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <Products></Products>
       <Categories></Categories>
       <Discount></Discount>
+      <ProductSlider></ProductSlider>
     </div>
   );
 };

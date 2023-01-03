@@ -9,8 +9,8 @@ import trimmer from '../../assest/giftCard/trimmer.jpg';
 const GiftCard = () => {
   return (
     <div className='grid sm:grid-cols-1 lg:grid-cols-2 gap-10 '>
-     <div>
-     <div className="card lg:card-side bg-gray-100 shadow-xl">
+     <div className='bg-red-50'>
+     <div className="card lg:card-side shadow-xl">
      <div className="card-body pt-36">
     <h2 className="text-2xl font-bold">N95 Face Mask</h2>
     <h2 className='text-2xl font-bold'>Multilayer Protect</h2>
@@ -21,7 +21,7 @@ const GiftCard = () => {
   <figure><img className='h-96' src={mask} alt="Album"/></figure>
 </div>
      </div>
-     <div className=''>
+     <div className='bg-red-50'>
      <div className="card lg:card-side bg-base-100 shadow-xl">
      <div className="card-body pt-36">
     <h2 className="text-2xl font-bold">Botanical Head</h2>
