@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import mask from '../../assest/giftCard/mask.jpg';
-import trimmer from '../../assest/giftCard/trimmer.jpg';
-
-
+import mask from '../../assest/giftCard/mask.png';
+import trimmer from '../../assest/giftCard/trimmer.png';
 
 
 const GiftCard = () => {
   return (
-    <div className='grid sm:grid-cols-1 lg:grid-cols-2 gap-10 '>
-     <div className='bg-red-50'>
+    <div className='grid sm:grid-cols-1 lg:grid-cols-2 gap-10 mt-16'>
+     <div className='bg-indigo-100 rounded-xl'>
      <div className="card lg:card-side shadow-xl">
      <div className="card-body pt-36">
     <h2 className="text-2xl font-bold">N95 Face Mask</h2>
@@ -21,7 +19,7 @@ const GiftCard = () => {
   <figure><img className='h-96' src={mask} alt="Album"/></figure>
 </div>
      </div>
-     <div className='bg-red-50'>
+     <div className='bg-sky-100 rounded-xl'>
      <div className="card lg:card-side bg-base-100 shadow-xl">
      <div className="card-body pt-36">
     <h2 className="text-2xl font-bold">Botanical Head</h2>

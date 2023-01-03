@@ -58,6 +58,11 @@ const ProductSlider = () => {
 
   
   return (
+    <div>
+      <h1 className='mt-12 font-bold text-2xl text-center'>Product Feature</h1>
+      <div className='flex items-center justify-center'>
+      <div className="divider bg-orange-400 w-60 h-1 rounded-md"></div>
+      </div>
     <Slider className='app mt-10 mx-10' {...settings }>
      {
       products.map(product => <ProSlider
@@ -66,6 +71,7 @@ const ProductSlider = () => {
       ></ProSlider>)
      }
     </Slider>
+    </div>
   );
 };
 
