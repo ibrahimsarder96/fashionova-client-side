@@ -8,6 +8,7 @@ import Cart from './Cart';
 import useProducts from '../../hooks/useProducts';
 import BookingModal from './BookingModal';
 
+
 const ProductDetail = () => {
 
   const {productId} = useParams();

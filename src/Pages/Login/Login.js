@@ -12,6 +12,9 @@ import useToken from '../../hooks/useToken';
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(
+    auth
+  );
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [
     signInWithEmailAndPassword,
@@ -36,20 +39,21 @@ const Login = () => {
     signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
   }
   const onSubmit = data =>{
-    console.log(data)
     signInWithEmailAndPassword(data.email, data.password);
   };
 
   //***The function has not finished the work*******
-  // const resetPassword = async(data)=> {
-  //   console.log(data)
-  //   const email = data.email;
-  //   console.log(email)
-  //   if(email){
-  //     await sendPasswordResetEmail(email);
-  //     toast('sent email');
-  //   }
-  // }
+  
+  const resetPassword = async(data)=> {
+    console.log(data)
+    const email = data.email;
+    console.log(email)
+  if(email){
+    console.log(data.email)
+    sendPasswordResetEmail(data.email);
+    toast('sent email');
+  }
+  }
   
   return (
 <div className="card h-screen justify-center items-center">
@@ -110,7 +114,7 @@ const Login = () => {
         <input className='btn hover:bg-slate-600 bg-orange-400 w-full max-w-xs uppercase orange-400 text-white font-extrabold' type='submit' value='Login'/>
     </form>
     <p className='text-accent'>New Fashionova? <Link to="/signup" className='text-blue-400'>Create New Account</Link></p>
-    <p className='text-accent'>Forget Password? <button className='text-blue-400' >Reset Password</button></p>
+    <p className='text-accent'>Forget Password? <button onClick={resetPassword} variant='link' className='text-blue-400' >Reset Password</button></p>
     <div className="flex items-center justify-center ">
         <div className="h-1 bg-gray-300 w-28 rounded-md"></div>
         <div className="divider">OR</div>

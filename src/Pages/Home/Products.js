@@ -3,7 +3,6 @@ import Product from './Product';
 
 const Products = () => {
   const [products, setProducts] = useProducts();
- 
   return (
     <div>
       <div id='buy' className='flex flex-col w-full'>
@@ -17,8 +16,6 @@ const Products = () => {
         <span>New Arrival</span>
         </p>
       </div>
-      
-     
       <div className='mt-11  grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10'>
       {
         products.map(product => <Product
