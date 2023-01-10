@@ -7,6 +7,7 @@ import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from './Cart';
 import useProducts from '../../hooks/useProducts';
 import BookingModal from './BookingModal';
+import Navbar from '../Shared/Navbar';
 
 
 const ProductDetail = () => {
@@ -75,6 +76,11 @@ const ProductDetail = () => {
               <button className='text-white bg-lime-400 rounded-lg p-3 mt-5'>Order Review</button>
             </Link>
           </Cart>
+        </div>
+        <div>
+          <Navbar
+          cart={cart}
+          ></Navbar>
         </div>
       </div>
     </div>

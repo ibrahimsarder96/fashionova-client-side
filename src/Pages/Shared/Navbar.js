@@ -4,9 +4,18 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import CustomLink from '../CustomLink/CustomLink';
+import Loading from './Loading';
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const {cart} = props;
+//   let quantity = 0;
+//   for(const product of cart){
+//     quantity = quantity + product.quantity;
+// }
   const [user, loading, error] = useAuthState(auth);
+  if(loading){
+    return <Loading></Loading>
+  }
 
   const logout = () => {
     signOut(auth);

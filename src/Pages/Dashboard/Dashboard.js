@@ -28,6 +28,8 @@ const Dashboard = () => {
       <li className='text-2xl text-white hover:text-black hover:bg-lime-200 rounded-md font-bold'><Link to='/dashboard/users'>All Users</Link></li>
       <li className='text-2xl text-white hover:text-black hover:bg-purple-200 rounded-md font-bold'><Link to='/dashboard/addProduct'>Add Product</Link></li>
       <li className='text-2xl text-white hover:text-black hover:bg-lime-200 rounded-md font-bold'><Link to='/dashboard/manageProduct'>Manage Product</Link></li>
+      <li className='text-2xl text-white hover:text-black hover:bg-purple-200 rounded-md font-bold'><Link to='/dashboard/productSell'>Product Sell</Link></li>
+      <li className='text-2xl text-white hover:text-black hover:bg-lime-200 rounded-md font-bold'><Link to='/dashboard/investment'>Investment</Link></li>
     </ul>
   </div>
 </div>

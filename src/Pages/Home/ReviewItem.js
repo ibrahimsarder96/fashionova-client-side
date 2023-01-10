@@ -4,7 +4,6 @@ import React from 'react';
 
 const ReviewItem = (props) => {
   const {product, handleRemoveProduct} = props;
-  console.log(props)
   const {img, name, price, shipping} = product;
   return (
     <div className='flex items-center my-6 rounded-md bg-gray-300'>

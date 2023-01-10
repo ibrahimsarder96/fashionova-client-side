@@ -18,6 +18,8 @@ import RequireAdmin from "./Pages/Login/RequireAdmin";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import Payment from "./Pages/Dashboard/Payment";
+import ProductSell from "./Pages/Dashboard/ProductSell";
+import Investment from "./Pages/Dashboard/Investment";
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
           <Route path="manageProduct" element={<ManageProduct></ManageProduct>}></Route>
+          <Route path="productSell" element={<ProductSell></ProductSell>}></Route>
+          <Route path="investment" element={<Investment></Investment>}></Route>
           {/* <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route> */}
         </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
