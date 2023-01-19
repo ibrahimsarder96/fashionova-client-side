@@ -14,7 +14,6 @@ import Navbar from "./Pages/Shared/Navbar";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import MyOrders from "./Pages/Dashboard/MyOrders";
 import Users from "./Pages/Dashboard/Users";
-import RequireAdmin from "./Pages/Login/RequireAdmin";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import Payment from "./Pages/Dashboard/Payment";
