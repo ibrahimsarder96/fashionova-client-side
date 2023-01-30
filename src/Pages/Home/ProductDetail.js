@@ -77,11 +77,6 @@ const ProductDetail = () => {
             </Link>
           </Cart>
         </div>
-        <div>
-          <Navbar
-          cart={cart}
-          ></Navbar>
-        </div>
       </div>
     </div>
     <div>
