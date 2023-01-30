@@ -7,7 +7,6 @@ import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from './Cart';
 import useProducts from '../../hooks/useProducts';
 import BookingModal from './BookingModal';
-import Navbar from '../Shared/Navbar';
 
 
 const ProductDetail = () => {
@@ -23,7 +22,6 @@ const ProductDetail = () => {
     const savedCart = [];
     for(const id in storedCart){
       const addedProduct = products.find(product => product._id === id);
-      console.log(addedProduct)
       if(addedProduct){
         const quantity = storedCart[id];
         addedProduct.quantity = quantity;
