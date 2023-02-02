@@ -8,9 +8,7 @@ import Cart from './Cart';
 import useProducts from '../../hooks/useProducts';
 import BookingModal from './BookingModal';
 
-
 const ProductDetail = () => {
-
   const {productId} = useParams();
   const [product, setProduct] = useProduct(productId);
   const [products] = useProducts();
@@ -45,7 +43,7 @@ const ProductDetail = () => {
         }
     setCart(newCart);
     addToDb(product._id)
-  }
+  };
   
   return (
    <div className='px-40'>
