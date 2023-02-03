@@ -2,7 +2,7 @@ import useProducts from '../../hooks/useProducts';
 import Product from './Product';
 
 const Products = () => {
-  const [products, setProducts] = useProducts();
+  const [products] = useProducts();
   return (
     <div id='products'>
       <div className='flex flex-col w-full'>

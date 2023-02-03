@@ -10,7 +10,7 @@ import BookingModal from './BookingModal';
 
 const ProductDetail = () => {
   const {productId} = useParams();
-  const [product, setProduct] = useProduct(productId);
+  const [product] = useProduct(productId);
   const [products] = useProducts();
   const [cart, setCart] = useState([]);
   const [vendible, setVendible] = useState(null);
