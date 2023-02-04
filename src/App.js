@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyReview from "./Pages/Dashboard/MyReview";
 import Home from "./Pages/Home/Home";
@@ -19,47 +19,9 @@ import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import Payment from "./Pages/Dashboard/Payment";
 import ProductSell from "./Pages/Dashboard/ProductSell";
 import Investment from "./Pages/Dashboard/Investment";
-// import { useEffect, useState } from "react";
-// import { addToDb, getStoredCart } from "./utilities/fakedb";
-// import useProduct from "./hooks/useProduct";
-// import useProducts from "./hooks/useProducts";
-
-
 
 function App() {
-  // const {productId} = useParams();
-  // const [product, setProduct] = useProduct(productId);
-  // const [cart, setCart] = useState([]);
-  // const [products] = useProducts();
 
-  // useEffect( () => {
-  //   const storedCart = getStoredCart();
-  //   const savedCart = [];
-  //   for(const id in storedCart){
-  //     const addedProduct = products.find(product => product._id === id);
-  //     if(addedProduct){
-  //       const quantity = storedCart[id];
-  //       addedProduct.quantity = quantity;
-  //       savedCart.push(addedProduct);
-  //     }
-  //   }
-  //   setCart(savedCart);
-  // },[products])
-  // const handleAddToCart = (selectedProduct) => {
-  //   let newCart = [];
-  //       const exists = cart.find(product => product._id === selectedProduct._id);
-  //       if(!exists){
-  //           selectedProduct.quantity = 1;
-  //           newCart = [...cart, selectedProduct];
-  //       }
-  //       else{
-  //           const rest = cart.filter(product => product._id !== selectedProduct._id);
-  //           exists.quantity = exists.quantity + 1;
-  //           newCart = [...rest, exists];
-  //       }
-  //   setCart(newCart);
-  //   addToDb(product._id)
-  // };
   return (
     <div>
       <Navbar></Navbar>
@@ -71,10 +33,6 @@ function App() {
         <Route path="/product/:productId" element={
         <RequireAuth>
           <ProductDetail
-          // handleAddToCart={handleAddToCart}
-          // setCart={setCart}
-          // cart={cart}
-          // product={product}
           ></ProductDetail>
         </RequireAuth>
         }></Route>

@@ -27,7 +27,7 @@ const ProductDetail = () => {
       }
     }
     setCart(savedCart);
-  },[products])
+  },[products]);
 
   const handleAddToCart = (selectedProduct) => {
     let newCart = [];
