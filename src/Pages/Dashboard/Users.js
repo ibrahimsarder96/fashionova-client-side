@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
-  const {data: users, refetch, isLoading} = useQuery('users', () => fetch('http://localhost:5000/user',  {
+  const {data: users, refetch, isLoading} = useQuery('users', () => fetch('https://fashionova-server-ibrahimsarder96.vercel.app/user',  {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${localStorage.getItem('accessToken')}`
