@@ -46,7 +46,7 @@ const Navbar = () => {
   </>
 
   return (
-    <div className="navbar bg-gray-100  sticky top-0">
+    <div style={{backgroundColor:"#95D7DE"}} className="navbar  sticky top-0">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn bg-black lg:hidden">
