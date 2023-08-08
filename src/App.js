@@ -23,8 +23,8 @@ import Investment from "./Pages/Dashboard/Investment";
 function App() {
 
   return (
-    <div>
-      <Navbar></Navbar>
+    <div >
+      <Navbar ></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>

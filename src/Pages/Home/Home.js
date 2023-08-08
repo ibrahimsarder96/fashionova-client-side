@@ -10,7 +10,7 @@ import ProductSlider from './ProductSlider';
 
 const Home = () => {
   return (
-    <div>
+    <div className='max-w-[1440px] mx-auto'>
       <Banner></Banner>
       <Info></Info>
       <GiftCard></GiftCard>
