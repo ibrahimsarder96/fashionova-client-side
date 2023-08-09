@@ -4,6 +4,9 @@ import bg from '../../assest/banner/bg.jpg';
 import { useSpring, animated } from '@react-spring/web'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Banner.css';
+
+
 
 const Banner = () => {
   const [flip, set] = useState(false)
@@ -17,19 +20,31 @@ const Banner = () => {
   })
   
   return (
-    <div style={{
-      background: `url(${bg})`,
-      backgroundSize: 'cover'
-    }} className="hero min-h-screen">
-  <div className="hero-content flex-col  lg:flex-row-reverse xl:max-w-screen-2xl">
-    <img src={banner} alt='' className="lg:max-w-md sm:min-w-xs h-full rounded-lg shadow-2xl" />
-    <div className='sm: my-24'>
-      <h1 className="text-5xl font-bold text-black"><animated.div style={props}>The Classics</animated.div></h1>
-      <p className="py-6 text-black">A resolution to get behind Effortlessly refined Styles for Celebrating A Stand out Shirt is a on-and done autumn look</p>
-      <button className='btn bg-orange-400 border-none text-white hover:bg-slate-600 text-xl font-bold hover:text-orange-400'><Link href='home#products'>BUY IT NOW!</Link></button>
+   <div className="lg:flex" style={{backgroundColor:"#E7EEF5"}}>
+    <section className='w-6/12'>
+    <div className='mt-24 ml-8'>
+    <h1 className='text-7xl font-bold'>Make your fashion perfect</h1>
+    <p className='text-xl my-4'>With your cloth in collection, you can take your style to the next level!</p>
+    <button className='text-2xl px-7 py-4 rounded text-white font-bold' style={{backgroundColor:"#95D7DE"}} >Shop Now</button>
     </div>
-  </div>
-</div>
+    </section>
+    <section className='w-6/12 grid grid-cols-1 lg:grid-cols-3 gap-6 sm:z-1'>
+    <div className='lg:mt-24'>
+      <img className="rounded" src={banner} alt="" />
+      <img className="rounded mt-6" src={banner} alt=""/>
+    </div>
+    <div className=''>
+      <img className="rounded" src={banner} alt="" />
+      <img className="rounded my-6" src={banner} alt=""/>
+      <img className="rounded" src={banner} alt="" />
+    </div>
+    <div className='lg:mt-24'>
+      <img className="rounded" src={banner} alt="" />
+      <img className="rounded mt-6" src={banner} alt=""/>
+    
+    </div>
+    </section>
+   </div>
   );
 };
 
