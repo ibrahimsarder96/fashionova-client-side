@@ -7,3 +7,9 @@ Live-website[link](https://bdfashonova.firebaseapp.com/).
 - Products Detail
 - Admin role
 - Login verify
+
+## That project Multiple Features-
+
+- User login and Sign Up 
+- Authentication
+- Backend data load
