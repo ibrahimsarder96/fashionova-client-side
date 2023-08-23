@@ -10,6 +10,7 @@ import ProductSlider from './ProductSlider';
 
 const Home = () => {
   return (
+   <>
     <div className='max-w-[1440px] mx-auto'>
       <Banner></Banner>
       <Info></Info>
@@ -17,8 +18,11 @@ const Home = () => {
       <Products></Products>
       <Categories></Categories>
       <Discount></Discount>
-      <ProductSlider></ProductSlider>
     </div>
+    <div>
+    <ProductSlider></ProductSlider>
+    </div>
+   </>
   );
 };
 

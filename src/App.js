@@ -19,6 +19,7 @@ import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import Payment from "./Pages/Dashboard/Payment";
 import ProductSell from "./Pages/Dashboard/ProductSell";
 import Investment from "./Pages/Dashboard/Investment";
+import Profile from "./Pages/Home/Profile";
 
 function App() {
 
@@ -39,6 +40,11 @@ function App() {
         <Route path="/order" element={
         <RequireAuth>
          <Order></Order>
+        </RequireAuth>
+        }></Route>
+        <Route path="/profile" element={
+        <RequireAuth>
+         <Profile></Profile>
         </RequireAuth>
         }></Route>
         <Route path="/dashboard" element={

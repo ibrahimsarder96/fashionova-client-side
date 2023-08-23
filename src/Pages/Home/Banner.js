@@ -25,7 +25,7 @@ const Banner = () => {
     <div className='mt-24 ml-8'>
     <h1 className='text-7xl font-bold'>Make your fashion perfect</h1>
     <p className='text-xl my-4'>With your cloth in collection, you can take your style to the next level!</p>
-    <button className='text-2xl px-7 py-4 rounded text-white font-bold' style={{backgroundColor:"#95D7DE"}} >Shop Now</button>
+    <button id='btn' className='text-xl px-7 py-4 rounded bg-primary text-black font-bold' >Shop Now</button>
     </div>
     </section>
     <section className='w-6/12 grid grid-cols-1 lg:grid-cols-3 gap-6 sm:z-1'>

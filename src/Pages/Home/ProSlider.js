@@ -7,8 +7,8 @@ const ProSlider = ({product}) => {
   return (
    <div>
       <Link>
-          <div  className="card w-96 bg-slate-600 shadow-xl">
-  <figure className="px-10 pt-10">
+          <div  className="card w-80 bg-slate-600 shadow-xl">
+  <figure className="px-10 pt-6">
     <img src={img} alt="Shoes" className="rounded-xl" />
   </figure>
   <div className="card-body rounded items-center bg-slate-600 text-center">

@@ -14,19 +14,19 @@ const ProductSlider = () => {
     .then(res => res.json())
     .then(data => setProducts(data))
   },[]);
-  const settings = {
+  var settings = {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           infinite: true,
           dots: true
         }
@@ -45,21 +45,14 @@ const ProductSlider = () => {
           slidesToShow: 1,
           slidesToScroll: 1
         }
-      },
-      {
-        breakpoint: 380,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
       }
     ]
   };
 
   
   return (
-    <div>
-      <h1 className='mt-12 font-bold text-2xl text-center uppercase'>Latest Products</h1>
+    <div style={{backgroundColor: "#C3D7F0"}} className=' pb-6'>
+      <h1 className='mt-12 pt-5  font-bold  text-2xl text-center uppercase'>Latest Products</h1>
       <div className='flex items-center justify-center'>
       <div className="divider bg-orange-400 w-60 h-1 rounded-md"></div>
       </div>
