@@ -38,13 +38,13 @@ const Navbar = () => {
     }
     {
       user && <li className='text-xl '><Link to="/profile">
-         <div className="dropdown dropdown-end ">
+         <div className="dropdown dropdown-start">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full bg-slate-400">
+        <div className="w-10 rounded-full bg-white">
           <img src={user?.photoURL} alt="" className=''/>
         </div>
       </label>
-      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-gray-300  rounded-box w-52">
+      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-gray-300 rounded-box w-52">
         <li className=''>{user  && <CustomLink to="/dashboard">Dashboard</CustomLink>}</li>
         <li className=''>{user  && <CustomLink onClick={logout} to="/login">LogOut</CustomLink>}</li>
       </ul>
@@ -62,11 +62,11 @@ const Navbar = () => {
       <label tabIndex={0} className="btn bg-black lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="white"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex="0" className="menu menu-compact dropdown-content  shadow bg-gray-400 rounded-box w-52">
+      <ul tabIndex="0" className="menu menu-compact dropdown-content  shadow bg-white rounded-box w-52">
         {menuItem}
       </ul>
     </div>
-    <Link to='/' className="font-extrabold normal-case text-red-300 lg:text-4xl pl-16"><img src={logo} alt={logo}></img></Link>
+    <Link to='/' className="pl-16"><img className='lg:h-14 lg:w-28 sm:lg-7 sm:w-14' src={logo} alt={logo}></img></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
   <ul className="menu menu-horizontal p-0 pl-96 ml-96">
