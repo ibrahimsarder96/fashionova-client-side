@@ -25,10 +25,10 @@ const Discount = () => {
             <img className='h-full' src={photo2} alt="" />
           </div>
           <div className='pt-16'>
-            <h1 className='text-xl pb-4'><animated.div style={props}>New Collection</animated.div></h1>
-            <p className='font-bold text-2xl'>Get Up To 25% Off New Fashion</p>
-            <p className='font-bold text-2xl'>Collection in 2023</p>
-            <Link className='hover:underline text-orange-400'>Discover Now</Link>
+            <h1 className='text-xl lg:ml-0 ml-8 pb-4'><animated.div style={props}>New Collection</animated.div></h1>
+            <p className='font-bold text-2xl lg:ml-0 ml-8 '>Get Up To 25% Off New Fashion</p>
+            <p className='font-bold text-2xl lg:ml-0 ml-8 '>Collection in 2023</p>
+            <Link className='hover:underline lg:ml-0 ml-8  text-orange-400'>Discover Now</Link>
           </div>
           <div>
             <img className='h-full' src={photo3} alt="" />
