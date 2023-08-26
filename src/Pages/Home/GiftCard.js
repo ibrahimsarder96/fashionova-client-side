@@ -19,7 +19,7 @@ const GiftCard = () => {
   <figure><img className='h-96' src={mask} alt="Album"/></figure>
 </div>
      </div>
-     <div className='bg-sky-100 rounded-xl'>
+     <div style={{backgroundColor:"#E7EEF5"}} className='rounded-xl'>
      <div className="card lg:card-side bg-base-100 shadow-xl">
      <div className="card-body pt-36">
     <h2 className="text-2xl font-bold">Botanical Head</h2>

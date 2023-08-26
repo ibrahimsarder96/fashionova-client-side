@@ -37,13 +37,13 @@ const MyOrders = () => {
       <div className="overflow-x-auto mt-4">
   <table className="table w-full">
     <thead>
-      <tr className='bg-black text-white'>
-        <th>Serial</th>
-        <th>Name</th>
-        <th>Date</th>
-        <th>Email</th>
-        <th>Product</th>
-        <th>Payment</th>
+      <tr className=' text-white'>
+        <th className='bg-black'>Serial</th>
+        <th className='bg-black'>Name</th>
+        <th className='bg-black'>Date</th>
+        <th className='bg-black'>Email</th>
+        <th className='bg-black'>Product</th>
+        <th className='bg-black'>Payment</th>
       </tr>
     </thead>
     <tbody>

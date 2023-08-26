@@ -26,10 +26,9 @@ const ManageProduct = () => {
   <table className="table w-full">
     <thead>
       <tr className='bg-black text-white'>
-        <th>Serial</th>
-        <th>Product Name</th>
-        <th>Remove</th>
-
+        <th className='bg-black'>Serial</th>
+        <th className='bg-black'>Product Name</th>
+        <th className='bg-black'>Remove</th>
       </tr>
     </thead>
     <tbody>
