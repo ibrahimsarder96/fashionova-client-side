@@ -20,6 +20,7 @@ import Payment from "./Pages/Dashboard/Payment";
 import ProductSell from "./Pages/Dashboard/ProductSell";
 import Investment from "./Pages/Dashboard/Investment";
 import Profile from "./Pages/Home/Profile";
+import Shop from "./Pages/Home/Shop";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signup' element={<SignUp></SignUp>}></Route>
+        <Route path='shop' element={<Shop></Shop>}></Route>
         <Route path="/product/:productId" element={
         <RequireAuth>
           <ProductDetail

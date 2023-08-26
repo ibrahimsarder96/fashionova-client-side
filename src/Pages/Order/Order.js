@@ -16,7 +16,7 @@ const Order = () => {
     console.log(product)
   }  
   return (
-    <div className='grid md:grid-cols-1 lg:grid-cols-2 gap-6 px-40'>
+    <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 px-40'>
       <div className="">
         {
           cart.map(product => <ReviewItem

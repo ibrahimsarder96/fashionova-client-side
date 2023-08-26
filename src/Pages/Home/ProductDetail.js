@@ -46,17 +46,17 @@ const ProductDetail = () => {
   };
   
   return (
-   <div className='px-40'>
+   <div className='lg:mx-40'>
      <div>
-      <div className='grid md:grid-cols-1 lg:grid-cols-3 '>
+      <div className='grid grid-cols-1 lg:grid-cols-3 '>
         <div>
         <img className='w-96 h-96 mt-10' src={product.img} alt="" />
-        <div>
-        <button onClick={ () => handleAddToCart(product)} className="btn inline-block hover:bg-orange-500 bg-lime-500 text-xl font-bold text-white mt-5 w-96">Add To Cart</button>
+        <div className=''>
+        <button onClick={ () => handleAddToCart(product)} className="btn inline-block hover:bg-orange-500 bg-lime-500 text-xl lg:ml-0 ml-7  sm:font-bold text-white mt-5 lg:w-96">Add To Cart</button>
         <label 
         onClick={() => setVendible(product)}
         htmlFor="booking-modal" 
-        className="btn hover:bg-orange-500 bg-lime-500 text-xl font-bold text-white mt-5 w-96">Buy Now</label>
+        className="btn hover:bg-orange-500 lg:ml-0 ml-7 bg-lime-500 text-xl font-bold text-white mt-5 lg:w-96">Buy Now</label>
         </div>
         </div>
         <div className='pt-32 ml-10 mt-10'>

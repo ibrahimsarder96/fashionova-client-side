@@ -1,15 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Product.css';
 
-const Product = ({product}) => {
-  const { _id, img, name, price} = product;
-  
+const Shops = ({shop}) => {
+  const {name, price, _id, img } = shop;
   const navigate = useNavigate();
   const navigateToProductDetail = id => {
     navigate(`/product/${id}`)
   }
-  
+
   return (
     <div className="card  bg-gray-50 shadow-2xl">
     <figure className="px-10 pt-10">
@@ -23,7 +21,6 @@ const Product = ({product}) => {
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
   <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-  
 </div>
       <p className='text-xl'>${price}</p>
       <div className="ard-actions">
@@ -34,4 +31,4 @@ const Product = ({product}) => {
   );
 };
 
-export default Product;
+export default Shops;

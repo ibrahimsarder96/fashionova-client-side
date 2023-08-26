@@ -6,11 +6,12 @@ import banner4 from '../../assest/banner/4.jpg';
 import banner5 from '../../assest/banner/5.jpg';
 import banner6 from '../../assest/banner/6.jpg';
 import banner7 from '../../assest/banner/7.jpg';
-import bg from '../../assest/banner/bg.jpg';
 import { useSpring, animated } from '@react-spring/web'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Banner.css';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
@@ -32,7 +33,7 @@ const Banner = () => {
     <h1 className='text-4xl lg:text-6xl  
      font-bold'>Make your fashion perfect</h1>
     <p className='text-xl my-4'>With your cloth in collection, you can take your style to the next level!</p>
-    <button id='btn' className='text-xl px-7 py-4 rounded bg-primary text-black font-bold ' >Shop Now</button>
+    <button id='btn' className='text-xl px-7 py-4 rounded bg-primary text-black font-bold ' ><Link to="/shop" className=''>Shop Now <FontAwesomeIcon className=' w-7 h-5' icon={faArrowRight}></FontAwesomeIcon></Link></button>
     </div>
     </section>
     <section className='lg:w-6/12 grid grid-cols-1 lg:grid-cols-3 gap-6 sm:z-1 mr-16'>
